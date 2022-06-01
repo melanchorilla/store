@@ -107,6 +107,7 @@ Route::group(['middleware'=>['auth:user']], function(){
   Route::resource('/product', 'Admin\ProductController');
   Route::resource('/modultestimoni', 'Admin\ModultestimoniController');
   Route::resource('/modulfasilitas', 'Admin\ModulfasilitasController');
+  Route::resource('/modulpartnership', 'Admin\ModulpartnershipController');
   Route::resource('/modulpage', 'Admin\ModulpageController');
   Route::resource('/modulfaq', 'Admin\ModulfaqController');
   Route::resource('/modulskill', 'Admin\ModulskillController');
@@ -116,8 +117,8 @@ Route::group(['middleware'=>['auth:user']], function(){
   Route::post('/modtestimoni/update', 'Admin\ModtestimoniController@update');
   Route::get('/modfasilitas', 'Admin\ModfasilitasController@index')->name('modfasilitas.index');
   Route::post('/modfasilitas/update', 'Admin\ModfasilitasController@update');
-  Route::get('/modulwelcome', 'Admin\ModulwelcomeController@index');
-  Route::post('/modulwelcome', 'Admin\ModulwelcomeController@update');
+  Route::get('/modulwelcome', 'Admin\ModulwelcomeController@index')->name('modulwelcome.index');
+  Route::post('/modulwelcome/update', 'Admin\ModulwelcomeController@update');
 
   Route::get('/order/pesananbaru', 'Admin\OrderController@pesananbaru');
   Route::get('/order/responpesanan/{invoice}/{nostatuspembayaran}', 'Admin\OrderController@responpesanan');

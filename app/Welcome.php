@@ -8,7 +8,8 @@ class Welcome extends Model
 {
   //public $timestamps = false;
   protected $table = 'welcome';
-  protected $fillable = ['title', 'deskripsi', 'gambar'];
+  protected $fillable = ['judul', 'deskripsi', 'gambar'];
+  // protected $guarded = ['id'];
 
   public function getImage()
   {

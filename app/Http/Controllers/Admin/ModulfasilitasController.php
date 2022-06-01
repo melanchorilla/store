@@ -127,7 +127,7 @@ class ModulfasilitasController extends Controller
       $fasilitas_data = [
         'nama' => $request->nama,
         'gambar' => $new_gambar,
-        'deskripsi' => $request->fasilitas
+        'deskripsi' => $request->deskripsi
       ];
 
       $fasilitas->update($fasilitas_data);

@@ -47,7 +47,7 @@
                       <label for="exampleInputEmail1">Gambar</label>
                       <div class="col-md-5">
                         <img src="{{$fasilitas->getImage()}}" style="max-height: 100px;"/>
-                        <input type="hidden" class="form-control" name="gambar_lama" value="{{ $deskripsi->gambar }}">
+                        <input type="hidden" class="form-control" name="gambar_lama" value="{{ $fasilitas->gambar }}">
                       </div>
                     </div>
 

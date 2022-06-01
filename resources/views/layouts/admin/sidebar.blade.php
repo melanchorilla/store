@@ -193,7 +193,7 @@
           </a>
         </li> --}}
         <li class="nav-item">
-          <a href="/modulwelcome" class="nav-link {{ $menu=='modulwelcome' ? 'active' : '' }}">
+          <a href="/modulwelcome" class="nav-link {{ $menu=='welcome' ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>
             <p>
               Welcome
@@ -213,6 +213,14 @@
             <i class="nav-icon fas fa-th"></i>
             <p>
               Facility
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/modulpartnership" class="nav-link {{ $menu=='modulpartnership' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              Partnership
             </p>
           </a>
         </li>

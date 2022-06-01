@@ -172,6 +172,7 @@ Route::group(['middleware'=>['auth:member']], function(){
 //##Frontend##
 Route::get('/about', 'AboutController@index')->name('about');
 Route::get('/facility', 'FacilityController@index')->name('facility');
+Route::get('/partnership', 'PartnershipController@index')->name('partnership');
 Route::get('/faq', 'FaqController@index')->name('faq');
 Route::get('/products', 'ProductsController@index')->name('products');
 Route::get('/testimoni', 'TestimoniController@index')->name('testimoni');

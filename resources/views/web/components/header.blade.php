@@ -272,6 +272,9 @@
                                     <li>
                                       <a href="{{ route('facility') }}" class="smooth" title="">FACILITY</a>
                                     </li>
+                                    <li>
+                                      <a href="{{ route('partnership') }}" class="smooth" title="">PARTNERSHIP</a>
+                                    </li>
                                   </ul>
                                 </div>
                               </div>

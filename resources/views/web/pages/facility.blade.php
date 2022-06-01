@@ -18,7 +18,7 @@
   @include('web.components.header')
 <style>
   .container p {
-    font-size: 14;
+    font-size: 14px;
   }
 
   .mt-5 {

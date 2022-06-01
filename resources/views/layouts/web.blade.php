@@ -6,7 +6,7 @@
 <head>
 <!-- Basic page needs
 	============================================ -->
-	<title>Store 15 Website Tangguh</title>
+	<title>NASA Airline</title>
 	<meta charset="utf-8">
 	<meta name="keywords" content="html template, furniture html template, interior html template, furniture & interior html template, best html template, best furniture template, best furniture theme, furniture theme, theme for furniture" />
 	<meta name="description" content="Furnicom is an awesome premium HTML template for any kind of online store, especially for furniture, interior, decoration, design studio and more. Quickly & easily build your website just by some clicks." />

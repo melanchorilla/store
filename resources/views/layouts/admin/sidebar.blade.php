@@ -192,14 +192,14 @@
             </p>
           </a>
         </li> --}}
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a href="/modulwelcome" class="nav-link {{ $menu=='welcome' ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>
             <p>
               Welcome
             </p>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a href="/modulaboutus" class="nav-link {{ $menu=='aboutus' ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>
@@ -221,6 +221,14 @@
             <i class="nav-icon fas fa-th"></i>
             <p>
               Partnership
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/modulfaq" class="nav-link {{ $menu=='modulfaq' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              FAQs
             </p>
           </a>
         </li>

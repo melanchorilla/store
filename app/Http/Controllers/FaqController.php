@@ -14,7 +14,7 @@ class FaqController extends Controller
 {
   public function index()
   {
-    $faq = Faq::all();
+    $faqs = Faq::all();
     $segmen = request()->segment(1);
     if($segmen=='faq'){
       $faqmenu = "active";
@@ -22,7 +22,7 @@ class FaqController extends Controller
       $faqmenu = "";
     }
     return view('web.pages.faq', compact(
-      'faq',
+      'faqs',
       'faqmenu'
     ));
   }

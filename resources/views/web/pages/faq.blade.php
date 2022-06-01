@@ -14,28 +14,30 @@
 @endsection
 
 @section('content')
+<style>
+    .mt-5 {
+        margin-top: 50px;
+    }
+</style>
     <div class="animsition">
         <div class="full-box">
             <main>
                 @include('web.components.header')
-                @component('web.components.page_title')
-                    Frequently Asked Question
-                @endcomponent
 
                 <div class="container">
                     <div class="box">
-                        <div class="row">
+                        <div class="row mt-5">
                             <div class="col-xs-12 col-md-12 col-lg-12">
                                 <div class="list-group">
 
-                                    @for ($i = 0; $i < 10; $i++)
-                                        <div class="list-group-item">
-                                            <h4 class="list-group-item-heading">Lorem Ipsum Dolor ?</h4>
-                                            <p class="list-group-item-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    @foreach($faqs as $faq)
+                                        <div class="list-group-item show-hidden">
+                                            <h4 class="list-group-item-heading"><a href="#jawab{{ $faq->id }}" data-toggle="collapse" aria-expanded="false" aria-controls="jawab{{$faq->id}}">{{ $faq->tanya }}</a></h4>
+                                            <p class="list-group-item-text collapse" id="jawab{{ $faq->id }}">
+                                                {{ $faq->jawab }}
                                             </p>
                                         </div>
-                                    @endfor
+                                    @endforeach
 
                                 </div>
                             </div>
@@ -43,7 +45,6 @@
 
                         <hr />
 
-                        @include('web.components.contact_section')
 
                     </div>
                 </div>
@@ -55,4 +56,7 @@
 
         </div>
     </div>
+
+<script>
+</script>
 @endsection

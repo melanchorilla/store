@@ -44,15 +44,29 @@
                 <div class="well col-sm-12 clearfix" style="min-height: 10px; margin: 50px 0 50px 0;">
 
                   <form action="/memberlogin" method="post" enctype="multipart/form-data">
+
+                  @if(session()->has('loginError'))
+                  <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    {{ session('loginError') }}
+                  </div>
+                  @endif
+
                   @csrf
                   <input type="hidden" name="link" class="form_login" value="{{ $link }}">
-                    <div class="form-group">
+                    <div class="form-group @error('email') has-error @enderror">
                       <label class="control-label" for="input-email">E-Mail Address</label>
-                      <input type="text" id="email" name="email" maxlength="90" value="" placeholder="E-Mail Address" class="form-control">
+                      <input type="text" id="email" name="email" maxlength="90" value="{{ old('email') }}" placeholder="E-Mail Address" class="form-control">
+                      @error('email')
+                        <span id="helpBlock2" class="help-block">{{ $message }}</span>
+                      @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group @error('password') has-error @enderror">
                       <label class="control-label" for="input-password">Password</label>
                       <input type="password" id="password" name="password" maxlength="90" value="" placeholder="Password" class="form-control">
+                      @error('password')
+                        <span id="helpBlock2" class="help-block">{{ $message }}</span>
+                      @enderror
                       <a href="{{route('reset')}}">Forgotten Password</a></div>
 
                       <input type="submit" value="Login" class="btn btn-primary pull-left">

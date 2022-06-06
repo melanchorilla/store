@@ -70,7 +70,7 @@ class ModultestimoniController extends Controller
           'testimoni' => $request->testimoni
         ]);
 
-        $gambar->move('public/assets/testimoni/', $new_gambar);
+        $gambar->move('assets/testimoni/', $new_gambar);
 
         return redirect()->route('modultestimoni.index')->with('success','Testimoni berhasil disimpan');
     }
@@ -125,7 +125,7 @@ class ModultestimoniController extends Controller
       if($request->has('gambar')){
         $gambar = $request->gambar;
         $new_gambar = time().str_replace(' ', '-', $gambar->getClientOriginalName());
-        $gambar->move('public/assets/testimoni/', $new_gambar);
+        $gambar->move('assets/testimoni/', $new_gambar);
       }else{
         $new_gambar = $request->gambar_lama;
       }
@@ -151,6 +151,10 @@ class ModultestimoniController extends Controller
     public function destroy($id)
     {
       $testimoni = Testimoni::findorfail($id);
+
+      if($testimoni->gambar) {
+        unlink(public_path('assets/testimoni/' . $testimoni->gambar));
+      }
       $testimoni->delete();
 
       return redirect()->back()->with('success', 'Data berhasil dihapus');

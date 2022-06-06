@@ -44,25 +44,34 @@
             <fieldset>
               <legend>Your Personal Details</legend>
 
-              <div class="form-group required">
+              <div class="form-group required @error('name') has-error @enderror">
                 <label class="col-sm-2 control-label" for="input-firstname">Nama</label>
                 <div class="col-sm-10">
-                  <input type="text" name="name" id="name" maxlength="90" placeholder="Nama Lengkap" class="form-control">
+                  <input type="text" name="name" id="name" maxlength="90" placeholder="Nama Lengkap" class="form-control" value="{{ old('name') }}">
+                  @error('name')
+                    <span id="helpBlock2" class="help-block">{{ $message }}</span>
+                  @enderror
                 </div>
               </div>
-              <div class="form-group required">
+              <div class="form-group required @error('email') has-error @enderror">
                 <label class="col-sm-2 control-label" for="input-lastname">Email</label>
                 <div class="col-sm-10">
-                  <input type="email" id="email" name="email" maxlength="90"  placeholder="Email" class="form-control">
+                  <input type="email" id="email" name="email" maxlength="90"  placeholder="Email" class="form-control" value="{{ old('email') }}">
+                  @error('email')
+                    <span id="helpBlock2" class="help-block">{{ $message }}</span>
+                  @enderror
                 </div>
               </div>
-              <div class="form-group required">
+              <div class="form-group required @error('telepon') has-error @enderror">
                 <label class="col-sm-2 control-label" for="input-telephone">Telepon</label>
                 <div class="col-sm-10">
-                  <input type="text" name="telepon" id="telepon" maxlength="90"  placeholder="Telepon" class="form-control">
+                  <input type="text" name="telepon" id="telepon" maxlength="90"  placeholder="Telepon" class="form-control" value="{{ old('telepon') }}">
+                  @error('telepon')
+                    <span id="helpBlock2" class="help-block">{{ $message }}</span>
+                  @enderror
                 </div>
               </div>
-              <div class="form-group required">
+              <div class="form-group required @error('password') has-error @enderror">
                 <label class="col-sm-2 control-label" for="input-telephone">Password</label>
                 <div class="col-sm-10">
                   <input type="password" name="password" id="password" maxlength="90"  placeholder="Password" class="form-control">
@@ -129,6 +138,7 @@
                       //alert(msg);
                       if(msg=='1'){
                         alert('Email sudah digunakan');
+            		        $.LoadingOverlay("hide");
                       }else{
                         //konten
                         $.ajax({

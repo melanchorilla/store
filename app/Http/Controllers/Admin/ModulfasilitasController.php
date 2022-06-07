@@ -109,7 +109,7 @@ class ModulfasilitasController extends Controller
     {
 
       $this->validate($request,[
-        'nama' => 'required',
+        'judul' => 'required',
         'gambar' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
         'deskripsi' => 'required',
       ]);
@@ -125,7 +125,7 @@ class ModulfasilitasController extends Controller
       }
 
       $fasilitas_data = [
-        'nama' => $request->nama,
+        'judul' => $request->judul,
         'gambar' => $new_gambar,
         'deskripsi' => $request->deskripsi
       ];

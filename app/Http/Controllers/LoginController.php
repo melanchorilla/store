@@ -28,7 +28,26 @@ class LoginController extends Controller
   public function postlogin(Request $request)
   {
     //dd($request->all());
-    if(Auth::guard('member')->attempt($request->only('email','password'))){
+    $validatedData = $request->validate([
+      'email' => 'required|email',
+      'password' => 'required'
+    ]);
+
+    // if(Auth::guard('member')->attempt($request->only('email','password'))){
+    //   Session::put('email', $request->email);
+
+    //   $link = $request->link;
+    //   if($link == ''){
+    //     return redirect('/member/dashboard');
+    //   }else if($link == 'home'){
+    //     return redirect('/');
+    //   }else{
+    //     return redirect('/'.$link);
+    //   }
+
+    // }
+
+    if(Auth::guard('member')->attempt($validatedData)){
       Session::put('email', $request->email);
 
       $link = $request->link;
@@ -41,6 +60,7 @@ class LoginController extends Controller
       }
 
     }
+    return back()->with('loginError', 'Login failed! Or You have to register first!');
     return redirect('/login');
   }
 

@@ -40,15 +40,31 @@ class RegisterController extends Controller
       //dd($request->all());
       $random = mt_rand(10000000,99999999);
       $kode_member = 'M'.$random;
-      $register = Register::create([
-        'kode_member' => $kode_member,
-        'name' => $request->name,
-        'email' => $request->email,
-        'telepon' => $request->telepon,
-        'password' => bcrypt($request->password),
-        'value' => $request->password,
-        'remember_token' => Str::random(60)
+      // validasi
+      $validatedData = $request->validate([
+        'name' => 'required|max:255',
+        'email' => 'required|email|unique:member',
+        'telepon' => 'required',
+        'password' => 'required|min:5',
       ]);
+
+      $validatedData['password'] = bcrypt($validatedData['password']);
+      $validatedData['kode_member'] = $kode_member;
+      $validatedData['value'] = $request->password;
+      $validatedData['remember_token'] = Str::random(60);
+
+      Register::create($validatedData);
+
+
+      // $register = Register::create([
+      //   'kode_member' => $kode_member,
+      //   'name' => $request->name,
+      //   'email' => $request->email,
+      //   'telepon' => $request->telepon,
+      //   'password' => bcrypt($request->password),
+      //   'value' => $request->password,
+      //   'remember_token' => Str::random(60)
+      // ]);
 
       $nama_depan = $request->name;
       $email = $request->email;

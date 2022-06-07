@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class AboutController extends Controller
+class BlogController extends Controller
 {
   public function index()
   {
@@ -25,14 +25,7 @@ class AboutController extends Controller
     }else{
       $menuabout = "";
     }
-    // return view('web.pages.about', compact(
-    //   'profiletoko',
-    //   'aboutus',
-    //   'time',
-    //   'menuabout'
-    // ));
-
-    return view('web.pages.about-static', compact(
+    return view('web.pages.blog', compact(
       'profiletoko',
       'aboutus',
       'time',

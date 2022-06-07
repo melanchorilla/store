@@ -1,5 +1,5 @@
 @extends('layouts.admin.layout')
-@section('header', 'Fasilitas')
+@section('header', 'Blog')
 
 @section('content')
 
@@ -20,37 +20,37 @@
                     </div>
                   @endif
 
-                  <a href="{{ route('modulfasilitas.create') }}" class="btn btn-info btn-sm">Tambah Fasilitas</a>
+                  <a href="{{ route('blog.create') }}" class="btn btn-info btn-sm">Tambah Blog</a>
                   <br><br>
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
                       <th>No</th>
-                      <th>Judul</th>
-                      <th>Deskripsi</th>
                       <th>Gambar</th>
+                      {{-- <th>Kategori</th> --}}
+                      <th>Nama</th>
                       <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php $no='1'; ?>
-                    @foreach ($fasilitas as $result)
+                    @foreach ($blog as $result)
                     <tr>
                       <td>{{ $no }}</td>
-                      <td>{{ $result->judul }}</td>
-                      <td>{{ $result->deskripsi }}</td>
                       <td>
-                        @if ($result->gambar)
-                            <img src="{{asset('assets/fasilitas/'.$result->gambar)}}" style="max-height: 50px;"/>
+                        @if ($result->gambar1)
+                            <img src="{{asset('assets/blog/'.$result->gambar1)}}" style="max-height: 50px;"/>
                         @else
                           {{ "Tidak ada gambar" }}
                         @endif
                       </td>
+                      {{-- <td>{{ $result->kategoriblog->nama }}</td> --}}
+                      <td>{{ $result->nama }}</td>
                       <td>
-                        <form action="{{ route('modulfasilitas.destroy', $result->id) }}" method="post">
+                        <form action="{{ route('blog.destroy', $result->id) }}" method="post">
                           @csrf
                           @method('delete')
-                          <a href="{{ route('modulfasilitas.edit', $result->id) }}" class="btn btn-primary">Edit</a>
+                          <a href="{{ route('blog.edit', $result->id) }}" class="btn btn-primary">Edit</a>
                           <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?')">Delete</button>
                         </form>
                       </td>

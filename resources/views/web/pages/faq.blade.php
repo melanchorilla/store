@@ -2,28 +2,42 @@
 
 <?php $seo = DB::table('seo')->where('id_seo', '1')->first(); ?>
 @section('title')
-  {{ $seo->title ? $seo->title : 'Qnanz Official' }}
+  {{ $seo->title ? $seo->title : 'Pusat Pendidikan dan Pelatihan Pramugari | Nasa.or.id' }}
 @endsection
 
 @section('description')
-  {{ $seo->deskripsi ? $seo->deskripsi : 'Qnanz Official' }}
+  {{ $seo->deskripsi ? $seo->deskripsi : 'Pusat Pendidikan dan Pelatihan Pramugari | Nasa.or.id' }}
 @endsection
 
 @section('keyword')
-  {{ $seo->keyword ? $seo->keyword : 'Qnanz Official' }}
+  {{ $seo->keyword ? $seo->keyword : 'Pusat Pendidikan dan Pelatihan Pramugari | Nasa.or.id' }}
 @endsection
 
 @section('content')
+
 <style>
     .mt-5 {
         margin-top: 50px;
     }
 </style>
+
     <div class="animsition">
         <div class="full-box">
             <main>
                 @include('web.components.header')
-
+                <div class="breadcrumbs">
+    <div class="container">
+      <h1 class="category-name">FREQUENTLY ASKED QUESTIONS (FAQs)</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="/home" class="smooth" title="">Home</a>
+        </li>
+        <li>
+          <a href="#" class="smooth" title="">faqs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
                 <div class="container">
                     <div class="box">
                         <div class="row mt-5">

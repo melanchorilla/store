@@ -39,6 +39,8 @@ Route::get('/resetadmin', 'AuthController@resetadmin')->name('resetadmin');
 Route::post('/cekemailadmin', 'AuthController@cekemailadmin');
 Route::post('/resetpassadmin', 'AuthController@resetpassadmin');
 Route::get('/resetsuccessadmin', 'AuthController@resetsuccessadmin')->name('resetsuccessadmin');
+Route::resource('/blogcat', 'Admin\BlogCatController');
+  Route::resource('/blog', 'Admin\BlogController');
 
 Route::group(['middleware'=>['auth:user']], function(){
   Route::get('/dashboard', 'Admin\DashboardController@index');
@@ -176,6 +178,7 @@ Route::get('/partnership', 'PartnershipController@index')->name('partnership');
 Route::get('/faq', 'FaqController@index')->name('faq');
 Route::get('/products', 'ProductsController@index')->name('products');
 Route::get('/testimoni', 'TestimoniController@index')->name('testimoni');
+Route::get('/blogs', 'BlogController@index')->name('blog');
 
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contactadd', 'ContactController@insert');

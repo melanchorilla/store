@@ -128,7 +128,7 @@
               @csrf
               <input type="hidden" name="idProduk" value="{{ $product->id }}">
               <div class="option-group">
-                <div class="quantity-control-box">
+                <div class="quantity-control-box hidden">
                   <label>Qty:</label>
                   <input type="text" maxlength="12" id="qty" name="qty" class="input-quantity only-number" value="1">
                   <span class="quantity-control-btn quantity-add">+</span>

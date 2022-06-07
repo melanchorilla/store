@@ -1,18 +1,5 @@
 @extends('layouts.web')
 
-<?php $seo = DB::table('seo')->where('id_seo', '1')->first(); ?>
-@section('title')
-  {{ $seo->title ? $seo->title : 'Jasa Pembuatan Website | websitetangguh.com' }}
-@endsection
-
-@section('description')
-  {{ $seo->deskripsi ? $seo->deskripsi : 'Jasa Pembuatan Website | websitetangguh.com' }}
-@endsection
-
-@section('keyword')
-  {{ $seo->keyword ? $seo->keyword : 'Jasa Pembuatan Website | websitetangguh.com' }}
-@endsection
-
 @section('content')
 
   @include('web.components.header')
@@ -55,13 +42,13 @@
 
   <div class="breadcrumbs">
     <div class="container">
-      <h1 class="category-name">Our Product</h1>
+      <h1 class="category-name">NASA ONLINE</h1>
       <ul class="breadcrumb">
         <li>
           <a href="/home" class="smooth" title="">Home</a>
         </li>
         <li>
-          <a href="javascript:;" class="smooth" title="">Our Product</a>
+          <a href="javascript:;" class="smooth" title="">Nasa Online</a>
         </li>
       </ul>
     </div>
@@ -71,6 +58,41 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12">
+          <p>NASA ONLINE merupakan kegiatan pendidikan yang disediakan oleh Nasa Airline Education Center yang dilaksanakan secara daring (online). Anda dapat mengikuti pendidikan dimanapun dan kapanpun tanpa terbatas lokasi dan waktu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <center>
+            <h3 class="mt-30">4 Alasan Mengikuti Nasa Online</h3>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="nasa-online-icon">
+                  <i class="fa fa-child"></i>
+                </div>
+                <h4>Flexible</h4>
+                <p>Anda dapat mengikuti kursus ini secara flexible baik waktu ataupun tempat. Dengan dilengkapi aplikasi e-learning Nasa, Anda dapat dengan mudah belajar dimanapun dan kapanpun</p>
+              </div>
+              <div class="col-md-3">
+                <div class="nasa-online-icon">
+                  <i class="fa fa-money"></i>
+                </div>
+                <h4>Biaya Terjangkau</h4>
+                <p>Biaya pendidikan terjangkau karena semua disediakan secara digital tanpa perlu buku cetak, biaya kos, dan juga biaya transportasi ke kampu</p>
+              </div>
+              <div class="col-md-3">
+                <div class="nasa-online-icon">
+                  <i class="fa fa-graduation-cap"></i>
+                </div>
+                <h4>Ijazah Diakui</h4>
+                <p>Walaupun dilaksanakan secara online namun proses pendidikan tetap dilakukan dengan profesional dengan ijazah yang diakui.</p>
+              </div>
+              <div class="col-md-3">
+                <div class="nasa-online-icon">
+                  <i class="fa fa-briefcase"></i>
+                </div>
+                <h4>Tutor Profesional</h4>
+                <p>Selama belajar Anda akan didampingi oleh Tutor yang Profesional dan berpengalaman secara online melalui aplikasi zoom meeting</p>
+              </div>
+            </div>
+          </center>
+          <h2 class="mt-30 mb-25 t-center">KURSUS ONLINE UNTUK ANDA</h2>
           <div class="product-list-view">
             <div class="row" id="itemContainer">
               @csrf

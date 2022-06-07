@@ -212,7 +212,7 @@
           <a href="/modulfasilitas" class="nav-link {{ $menu=='modulfasilitas' ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Facility
+              Facilities
             </p>
           </a>
         </li>
@@ -237,6 +237,29 @@
             <i class="nav-icon fas fa-th"></i>
             <p>Promo</p>
           </a>
+        </li>
+        <li class="nav-item has-treeview {{ $folder=='modulblog' ? 'menu-open' : '' }}">
+          <a href="#" class="nav-link {{ $folder=='modulblog' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-folder"></i>
+            <p>
+              Berita
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/blog" class="nav-link {{ $menu=='blog' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Berita</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/blogcat" class="nav-link {{ $menu=='blogcat' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Kategori</p>
+              </a>
+            </li>
+          </ul>
         </li>
         {{-- <li class="nav-item">
           <a href="/modultime" class="nav-link {{ $menu=='modultime' ? 'active' : '' }}">

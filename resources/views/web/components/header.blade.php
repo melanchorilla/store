@@ -1,9 +1,4 @@
 <!-- HEADER CONTAINER -->
-<?php
-              $profiltoko = DB::table('profiltoko')->where('id_profiltoko', '1')->first();
-              $email  = $profiltoko->email;
-              $telepon  = $profiltoko->telepon;
-              ?>
 <header class="typeheader-1">
   <!-- HEADER TOP -->
   <div class="header-top">
@@ -12,55 +7,27 @@
         <div class="col-lg-6 col-md-6 col-sm-9">
           <div class="header-user">
             <ul>
-              
-              
+              <?php
+              $profiltoko = DB::table('profiltoko')->where('id_profiltoko', '1')->first();
+              $email  = $profiltoko->email;
+              $telepon  = $profiltoko->telepon;
+              ?>
               <li>
                 <a href="javascript:;" class="smooth" title="">
                   <i class="fa fa-envelope" aria-hidden="true"></i>
-                  {{$email}}</a>
+                  Email : {{$email}}</a>
                 </li>
-                <li>
-                <a href="tel:{{$telepon}}" class="smooth" title="">
-                  <i class="fa fa-phone" aria-hidden="true"></i>
-                  {{$telepon}}</a>
-                </li>
+
               </ul>
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-3">
             <div class="header-hotline">
-              <?php
-                $gettwitter = DB::table('twitter')->where('id_twitter', '1')->first();
-                $twitter  = $gettwitter ->twitter;
-                $getinstagram = DB::table('instagram')->where('id_instagram', '1')->first();
-                $instagram  = $getinstagram ->instagram;
-                $getfacebook = DB::table('facebook')->where('id_facebook', '1')->first();
-                $facebook  = $getfacebook ->facebook;
-                $getyoutube = DB::table('youtube')->where('id_youtube', '1')->first();
-                $youtube  = $getyoutube ->youtube;
-              ?>
-                <ul>
-                  <li>
-                    <a href="{{$facebook}}" target="_blank" class="smooth" title>
-                      <i class="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{{$instagram}}" target="_blank" class="smooth" title>
-                      <i class="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{{$twitter}}" target="_blank" class="smooth" title>
-                      <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{{$youtube}}" target="_blank" class="smooth" title>
-                      <i class="fa fa-youtube" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                </ul>
+              <div class="item">
+                <p>
+                  <span class="hidden-md">Contact Us:</span> <a href="tel:{{$telepon}}" class="smooth" title=""><span>{{$telepon}}</span></a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -77,7 +44,7 @@
         ?>
         <div class="logo">
           <a href="/home" class="" title="">
-            <img src="{{asset('public/assets/logo/'.$logo)}}" alt="{{ $namatoko }}" class="">
+            <img src="{{asset('public/assets/logo/'.$logo)}}" alt="">
           </a>
         </div>
 
@@ -141,11 +108,11 @@
           <a href="javascript:;" onclick="window.location.href='/cart';" class="smooth cart-box dropdown-toggle" title="" data-toggle="dropdown">
             <img src="{{ asset('web/image/catalog/demo/header/cart.png') }}" class="cart-image" alt="">
             <p class="quantity">{{ $val_jumlah }} item(s)</p>
-            <p class="cart-title">MY CART</p>
+            <p class="cart-title">MY COURSE</p>
           </a>
           {{-- <ul class="dropdown-menu shopping-cart">
           <li class="shopping-cart-title clearfix">
-          <label>Your Product</label>
+          <label>Your Course Order</label>
           <label>Price</label>
         </li>
         <li class="product-item">
@@ -226,10 +193,10 @@
 <!-- //HEADER CENTER -->
 
 <!-- HEADER BOTTOM -->
-  <div class="header-bottom">
-    <div class="container">
-      <div class="header-bottom-left">
-        <div class="header-menu">
+<div class="header-bottom">
+  <div class="container">
+    <div class="header-bottom-left">
+      <div class="header-menu">
         <div class="megamenu-style-dev megamenu-dev">
           <div class="responsive">
             <nav class="navbar-default">
@@ -251,14 +218,13 @@
                         </li>
                         <!-- <li class="full-width">
                           <a href="{{route('about')}}" class="smooth cleafix" title="">
-                            ABOUT US
+                            
                           </a>
                         </li> -->
-                        <!-- About us baru -->
                         <li class="full-width menu-contact with-sub-menu hover">
                           <p class="close-menu"></p>
                           <a href="javascript:;" class="smooth cleafix" title="">
-                            ABOUT US
+                          ABOUT US
                             <b class="caret"> </b>
                           </a>
                           <div class="sub-menu" style="max-width: 350px;">
@@ -267,16 +233,16 @@
                                 <div class="col-sm-6">
                                   <ul>
                                     <li>
-                                      <a href="{{route('about')}}" class="smooth" title="">ABOUT US</a>
+                                      <a href="{{route('about')}}" class="smooth" title="">About Us</a>
                                     </li>
                                     <li>
-                                      <a href="{{ route('facility') }}" class="smooth" title="">FACILITY</a>
+                                    <a href="{{route('facility')}}" class="smooth cleafix" title="">Facilities</a>
                                     </li>
                                     <li>
-                                      <a href="{{ route('partnership') }}" class="smooth" title="">PARTNERSHIP</a>
+                                    <a href="{{route('partnership')}}" class="smooth cleafix" title="">Partnership</a>
                                     </li>
                                     <li>
-                                      <a href="{{ route('faq') }}" class="smooth" title="">FAQ</a>
+                                    <a href="{{route('faq')}}" class="smooth cleafix" title="">FAQs</a>
                                     </li>
                                   </ul>
                                 </div>
@@ -284,40 +250,35 @@
                             </div>
                           </div>
                         </li>
-                        <!-- tutup about us baru -->
-                        <li class="full-width">
-                          <a href="{{route('products')}}" class="smooth cleafix" title="">
-                            PRODUCTS
+                        <li class="full-width menu-contact with-sub-menu hover">
+                          <p class="close-menu"></p>
+                          <a href="javascript:;" class="smooth cleafix" title="">
+                            COURSES
+                            <b class="caret"> </b>
                           </a>
+                          <div class="sub-menu" style="max-width: 350px;">
+                            <div class="content">
+                              <div class="row">
+                                <div class="col-sm-6">
+                                  <ul>
+                                    <li>
+                                      <a href="/page/nasa-akademi" class="smooth" title="">NASA AKADEMI</a>
+                                    </li>
+                                    <li>
+                                    <a href="{{route('products')}}" class="smooth cleafix" title="">NASA ONLINE</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </li>
                         <li class="full-width">
                           <a href="{{route('contact')}}" class="smooth cleafix" title="">
                             CONTACT US
                           </a>
                         </li>
-                        <li class="full-width menu-contact with-sub-menu hover">
-                          <p class="close-menu"></p>
-                          <a href="javascript:;" class="smooth cleafix" title="">
-                            SUPPORT
-                            <b class="caret"> </b>
-                          </a>
-                          <div class="sub-menu" style="max-width: 350px;">
-                            <div class="content">
-                              <div class="row">
-                                <div class="col-sm-6">
-                                  <ul>
-                                    <li>
-                                      <a href="/page/cara-belanja" class="smooth" title="">CARA BELANJA</a>
-                                    </li>
-                                    <li>
-                                      <a href="/page/terms-condition" class="smooth" title="">TERM & CONDITIONS</a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
+                        
                         <li class="full-width menu-contact with-sub-menu hover">
                           <p class="close-menu"></p>
                           <a href="javascript:;" class="smooth cleafix" title="">
@@ -353,22 +314,43 @@
               </div>
             </div>
           </div>
-      </div>
-      <div class="header-bottom-right">
-        <a href="javascript:;" onclick="window.location.href='/cart';" class="smooth cart-box dropdown-toggle" title="" data-toggle="dropdown">
-          <div class="flex">
-           <div class="img-cart">
-            <img src="{{ asset('web/image/catalog/demo/header/cart.png') }}" class="cart-image" alt="">                             
-           </div>
-           <div class="text-cart">
-            <p class="quantity">{{ $val_jumlah }} item(s)</p>
-            <p class="cart-title">MY ORDER</p>                            
-           </div>                               
-          </div>    
-        </a>
+        </div>
+        <div class="header-bottom-right">
+          <?php
+            $gettwitter = DB::table('twitter')->where('id_twitter', '1')->first();
+            $twitter  = $gettwitter ->twitter;
+            $getinstagram = DB::table('instagram')->where('id_instagram', '1')->first();
+            $instagram  = $getinstagram ->instagram;
+            $getfacebook = DB::table('facebook')->where('id_facebook', '1')->first();
+            $facebook  = $getfacebook ->facebook;
+            $getyoutube = DB::table('youtube')->where('id_youtube', '1')->first();
+            $youtube  = $getyoutube ->youtube;
+          ?>
+          <ul>
+            <li>
+              <a href="{{$facebook}}" target="_blank" class="smooth" title>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="{{$instagram}}" target="_blank" class="smooth" title>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="{{$twitter}}" target="_blank" class="smooth" title>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="{{$youtube}}" target="_blank" class="smooth" title>
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
     <!-- //HEADER BOTTOM -->
-</header>
+  </header>
   <!-- //HEADER CONTAINER -->

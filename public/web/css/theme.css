@@ -4567,7 +4567,7 @@ html {
 
 body {
   background-color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   color: #444;
   line-height: 26px;
   margin: 0 auto;
@@ -8333,3 +8333,166 @@ a:hover {
     height: 385px; }
   .categories .col-right .another-category:last-child img {
     height: 385px; }
+
+/*edited*/
+.mt-5{margin-top: 5px;}
+.mt-10{margin-top: 10px;}
+.mt-15{margin-top: 15px;}
+.mt-20{margin-top: 20px;}
+.mt-25{margin-top: 25px;}
+.mt-30{margin-top: 30px;}
+
+.mb-5{margin-bottom: 5px;}
+.mb-10{margin-bottom: 10px;}
+.mb-15{margin-bottom: 15px;}
+.mb-20{margin-bottom: 20px;}
+.mb-25{margin-bottom: 25px;}
+/*
+ * About Us
+ */
+.visi{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-height: 300px;
+  padding: 100px 0;
+}
+.sec-title{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.breadcrumbs .category-name{
+  text-shadow: 1px 1px 5px #000;
+}
+.box-visi {
+  background-color: rgba(255,255,255,0.9);
+  padding: 30px 20px;
+}
+button#playme {padding: 20px 40px;border-radius: 15px;border: none;font-size: 24px;margin-top: 40px;}
+/*video play*/
+#all {
+  text-align: center;
+  padding: 40px 10px;
+  
+}
+
+#play-video {
+  border: 4px solid;
+  border-radius: 50%;
+  padding: 6px 11px;
+  background: transparent;
+  font-size: 24px;
+  color: #ae2f3b;
+  border-color: #ae2f3b;
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.3s ease !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  line-height: 1.5;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+#play-video:hover {
+  transform:scale(1.05);
+  -moz-transform:scale(1.05);
+  -webkit-transform:scale(1.05);
+  -o-transform:scale(1.05);
+}
+#play-video i {
+  transition: all 0s ease !important;
+  -webkit-transition: all 0s ease;
+  -moz-transition: all 0s ease;
+  -o-transition: all 0s ease;
+  line-height: 0;
+}
+#play-video:hover {
+  background-color: #ae2f3b;
+  color: #ffffff;
+}
+.text-play-video{
+  color: #fff;
+  text-shadow: 1px 1px 5px #000;
+}
+#close-video {
+  border: 4px solid;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 26px;
+  color: #8D908A;
+  height: 56px;
+  width: 56px;
+  text-align: center;
+}
+
+.youtube-video .modal-dialog {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  padding: 0 15px;
+  height: 100%;
+  max-width: 1000px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#video-container {
+  position: relative;
+  padding-bottom: 50%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+iframe#youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.youtube-video .modal-footer {
+  border: none;
+  text-align: center;
+  display: block;
+  padding: 0;
+}
+.youtube-video .modal-content {
+  background: none !important;
+  border: none;
+}
+.about-misi{
+  margin: 50px 0;
+}
+.about-misi .about-title{
+  margin-bottom: 60px;
+}
+.about-misi .about-title:before {
+  content: "";
+  position: absolute;
+  background: #007de9;
+  width: 7rem;
+  height: 3px;
+  margin-top: 50px;
+}
+
+/* Facilities */
+.facilities-title{
+  margin:15px 0;
+}
+.thumbnail.facility-col {min-height: 450px;}
+
+/*nasa-online*/
+.nasa-online-icon i {font-size: 40px;width: 150px;height: 150px;background-color: #fff;display: flex;align-content: center;align-items: center;justify-content: center;margin-top: 30px;margin-bottom: 30px;border-radius: 50%;}
+.t-center{
+  text-align: center;
+}

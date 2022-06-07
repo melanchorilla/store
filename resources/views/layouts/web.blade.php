@@ -28,6 +28,7 @@
 <!-- Libs CSS
 	============================================ -->
 	<link rel="stylesheet" href="{{ asset('web/css/bootstrap/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('web/css/animate.css') }}">
   <link href="{{ asset('web/css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
   <link href="{{ asset('web/js/datetimepicker/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
   <link href="{{ asset('web/js/owl-carousel/owl.carousel.css') }}" rel="stylesheet">

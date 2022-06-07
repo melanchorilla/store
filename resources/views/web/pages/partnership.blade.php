@@ -1,17 +1,5 @@
 @extends('layouts.web')
 
-<?php $seo = DB::table('seo')->where('id_seo', '1')->first(); ?>
-@section('title')
-  {{ $seo->title ? $seo->title : 'Jasa Pembuatan Website | websitetangguh.com' }}
-@endsection
-
-@section('description')
-  {{ $seo->deskripsi ? $seo->deskripsi : 'Jasa Pembuatan Website | websitetangguh.com' }}
-@endsection
-
-@section('keyword')
-  {{ $seo->keyword ? $seo->keyword : 'Jasa Pembuatan Website | websitetangguh.com' }}
-@endsection
 
 @section('content')
 
@@ -51,17 +39,14 @@ hr .bottom-text {
         </div>
     </div>
 
-    <div class="container">
-        <div class="row mt-5">
-            <h1 class="text-center">Partnership</h1>
-        </div>
+    <div class="container mt-10">
         @foreach($partnerships as $partnership)
             <div class="row mt-5 mb-5">
                 <div class="col-md-3">
                     <img class="img-responsive" src="{{ asset('assets/partnership/' . $partnership->gambar) }}" alt="">
                 </div>
                 <div class="col-md-9">
-                    <h3>{{ $partnership->nama_perusahaan }}</h3>
+                    <h3 class="mb-15">{{ $partnership->nama_perusahaan }}</h3>
                     <p>{!! $partnership->deskripsi !!}</p>
                 </div>
             </div>

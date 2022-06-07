@@ -3,15 +3,18 @@
   @foreach ($banner as $result)
   <div class="item-slider">
     <a href="#" class="">
-      <img src="{{asset('assets/banner/'.$result->gambar)}}" alt="">
+      <!-- <img src="{{asset('assets/banner/'.$result->gambar)}}" alt=""> -->
+      <img src="{{asset('assets/banner/pesawat.jpg')}}" alt="">
     </a>
     <div class="slider-info">
       <div class="container">
-        <h3 class="small-title">{{ $result->text1 }}</h3>
+        <!-- <h3 class="small-title">{{ $result->text1 }}</h3> -->
+        <h3 class="small-title">AIRLINE EDUCATION SYSTEM</h3>
         {{-- <h4 class="small-desc">Survive The Reality Of Everyday Life</h4> --}}
-        <h2 class="big-title">{!! $result->text2 !!}</h2>
+        <!-- <h2 class="big-title">{!! $result->text2 !!}</h2> -->
+        <h2 class="big-title">NASA</h2>
         <div class="text-center">
-          <a href="{{ $result->customlink }}" class="smooth see-more" title="">{{ $result->button_text }}</a>
+          <!-- <a href="{{ $result->customlink }}" class="smooth see-more" title="">{{ $result->button_text }}</a> -->
         </div>
       </div>
     </div>

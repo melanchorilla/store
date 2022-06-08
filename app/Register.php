@@ -8,6 +8,6 @@ class Register extends Model
 {
   //public $timestamps = false;
   protected $table = 'member';
-  protected $fillable = ['kode_member', 'name', 'email', 'telepon', 'password', 'remember_token', 'value'];
+  protected $fillable = ['kode_member', 'name', 'email', 'telepon', 'alamat', 'password', 'remember_token', 'value'];
 
 }

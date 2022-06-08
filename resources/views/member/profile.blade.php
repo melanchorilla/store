@@ -57,6 +57,13 @@
                       </div>
                     </div>
 
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Alamat</label>
+                      <div class="col-md-5">
+                        <textarea type="text" class="form-control" name="alamat" id="alamat">{{ $member->alamat }}</textarea>
+                      </div>
+                    </div>
+
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer">

@@ -148,7 +148,8 @@ class MemberController extends Controller
       $this->validate($request,[
         'name' => 'required',
         'email' => 'required',
-        'telepon' => 'required'
+        'telepon' => 'required',
+        'alamat' => 'required'
       ]);
 
       $email = Session::get('email');
@@ -158,7 +159,8 @@ class MemberController extends Controller
       DB::table('member')->where('kode_member', $kode_member)->update([
         'name' => $request->name,
         'email' => $request->email,
-        'telepon' => $request->telepon
+        'telepon' => $request->telepon,
+        'alamat' => $request->alamat,
         ]);
 
       return redirect()->back()->with('success', 'Data berhasil diupdate');

@@ -71,6 +71,15 @@
                   @enderror
                 </div>
               </div>
+              <div class="form-group required @error('alamat') has-error @enderror">
+                <label class="col-sm-2 control-label" for="input-telephone">Alamat</label>
+                <div class="col-sm-10">
+                  <textarea name="alamat" id="alamat" class="form-control" placeholder="Alamat"></textarea>
+                  @error('alamat')
+                    <span id="helpBlock2" class="help-block">{{ $message }}</span>
+                  @enderror
+                </div>
+              </div>
               <div class="form-group required @error('password') has-error @enderror">
                 <label class="col-sm-2 control-label" for="input-telephone">Password</label>
                 <div class="col-sm-10">
@@ -100,6 +109,7 @@
                 var name = $("#name").val();
                 var email = $("#email").val();
                 var telepon = $("#telepon").val();
+                var alamat = $("#alamat").val();
                 var password = $("#password").val();
 
                 if(name.length == 0){
@@ -117,6 +127,12 @@
                 if(telepon.length == 0){
                   alert("Maaf, Telepon tidak boleh kosong");
                   $("#telepon").focus();
+                  return (false);
+                }
+
+                if(alamat.length == 0){
+                  alert("Maaf, Telepon tidak boleh kosong");
+                  $("#alamat").focus();
                   return (false);
                 }
 

@@ -45,6 +45,7 @@ class RegisterController extends Controller
         'name' => 'required|max:255',
         'email' => 'required|email|unique:member',
         'telepon' => 'required',
+        'alamat' => 'required',
         'password' => 'required|min:5',
       ]);
 
@@ -52,6 +53,7 @@ class RegisterController extends Controller
       $validatedData['kode_member'] = $kode_member;
       $validatedData['value'] = $request->password;
       $validatedData['remember_token'] = Str::random(60);
+
 
       Register::create($validatedData);
 

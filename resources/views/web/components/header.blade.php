@@ -242,6 +242,9 @@
                                     <a href="{{route('partnership')}}" class="smooth cleafix" title="">Partnership</a>
                                     </li>
                                     <li>
+                                    <a href="{{route('testimoni')}}" class="smooth cleafix" title="">Testimonial</a>
+                                    </li>
+                                    <li>
                                     <a href="{{route('faq')}}" class="smooth cleafix" title="">FAQs</a>
                                     </li>
                                   </ul>

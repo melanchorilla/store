@@ -58,7 +58,6 @@
       <div class="blog grid-view col3">
         <div class="blog-posts">
           <div class="isotope row" id="itemContainer">
-            <?php $datablog = DB::table('blog')->get(); ?>
             @foreach ($datablog as $result)
             <div class="col-sm-6 col-md-4 grid-view-post">
               <div class="post">
@@ -80,8 +79,8 @@
         </div>
         <!-- /.blog-posts -->
 
-        <div class="pagination">
-          <div class="holder" style="text-align: center;"></div>
+        <div class="pagination text-center">
+          <div class="holder">{{ $datablog->links() }}</div>
         </div>
         <!-- /.pagination -->
 

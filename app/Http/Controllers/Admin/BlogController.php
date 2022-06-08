@@ -52,10 +52,10 @@ class BlogController extends Controller
     {
         //dd($request->all());
         //$post = Post::create($request->all());
-      //  $blog = Blog::all();
+      //  $blogcat = BlogCat::all();
         $this->validate($request,[
           'nama' => 'required',
-          //'kategori' => 'required',
+          // 'kategori' => 'required',
           'konten' => 'required',
           'gambar1' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
@@ -133,7 +133,7 @@ class BlogController extends Controller
       if($request->has('gambar1')){
         $gambar1 = $request->gambar1;
         $new_gambar1 = time().str_replace(' ', '-', $gambar1->getClientOriginalName());
-        $gambar1->move('public/assets/blog/', $new_gambar1);
+        $gambar1->move('assets/blog/', $new_gambar1);
       }else{
         $new_gambar1 = $request->gambar_lama1;
       }

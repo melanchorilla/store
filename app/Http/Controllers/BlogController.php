@@ -26,7 +26,7 @@ class BlogController extends Controller
       $menuabout = "";
     }
 
-    $datablog = Blog::all();
+    $datablog = Blog::latest()->paginate(6);
 
     return view('web.pages.blog', compact(
       'profiletoko',

@@ -63,7 +63,7 @@ class BlogController extends Controller
         $gambar1 = $request->gambar1;
         if($gambar1){
           $new_gambar1 = time().str_replace(' ', '-', $gambar1->getClientOriginalName());
-          $gambar1->move('public/assets/blog/', $new_gambar1);
+          $gambar1->move('assets/blog/', $new_gambar1);
         }else{
           $new_gambar1 = "";
         }
@@ -79,7 +79,7 @@ class BlogController extends Controller
           'slug' => Str::slug($request->nama)
         ]);
 
-        return redirect()->route('blog.index')->with('success','Data berhasil disimpan');
+        return redirect()->route('modulblog.index')->with('success','Data berhasil disimpan');
     }
 
     /**
@@ -150,7 +150,7 @@ class BlogController extends Controller
       ];
 
       Blog::whereId($id)->update($blog_data);
-      return redirect()->route('blog.index')->with('success', 'Data berhasil diupdate');
+      return redirect()->route('modulblog.index')->with('success', 'Data berhasil diupdate');
     }
 
     /**

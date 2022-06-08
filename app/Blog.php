@@ -24,4 +24,9 @@ class Blog extends Model
     return asset('assets/blog/'.$this->gambar1);
   }
 
+  public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 }

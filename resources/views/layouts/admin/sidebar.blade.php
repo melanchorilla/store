@@ -225,6 +225,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="/modulwhychooseus" class="nav-link {{ $menu=='modulwhychooseus' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              Why Choose Us Page
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="/modulfaq" class="nav-link {{ $menu=='modulfaq' ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>
             <p>
@@ -248,7 +256,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/blog" class="nav-link {{ $menu=='blog' ? 'active' : '' }}">
+              <a href="/modulblog" class="nav-link {{ $menu=='blog' ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Berita</p>
               </a>

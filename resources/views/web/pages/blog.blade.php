@@ -65,8 +65,9 @@
                 <figure class="main"><img src="{{asset('assets/blog/'.$result->gambar1)}}" alt="" /></figure>
                 <div class="box ">
                   <div class="meta"><span class="date"><?php echo date('d', strtotime($result->updated_at)); ?> <?php echo date('M', strtotime($result->updated_at)); ?> <?php echo date('Y', strtotime($result->updated_at)); ?></span></div>
-                  <h3 class="post-title"><a href="{{$result->slug}}">{{$result->nama}}</a></h3>
-                  <a href="{{$result->slug}}" class="more">Read more</a> </div>
+                  <h3 class="post-title"><a href="/blog/{{ $result->slug }}">{{$result->nama}}</a></h3>
+                  <a href="/blog/{{ $result->slug }}" class="more">Read more</a>
+                </div>
                 <!-- /.box -->
 
               </div>

@@ -20,7 +20,7 @@
                     </div>
                   @endif
 
-                  <a href="{{ route('blog.create') }}" class="btn btn-info btn-sm">Tambah Blog</a>
+                  <a href="{{ route('modulblog.create') }}" class="btn btn-info btn-sm">Tambah Blog</a>
                   <br><br>
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
@@ -47,10 +47,10 @@
                       {{-- <td>{{ $result->kategoriblog->nama }}</td> --}}
                       <td>{{ $result->nama }}</td>
                       <td>
-                        <form action="{{ route('blog.destroy', $result->id) }}" method="post">
+                        <form action="{{ route('modulblog.destroy', $result->id) }}" method="post">
                           @csrf
                           @method('delete')
-                          <a href="{{ route('blog.edit', $result->id) }}" class="btn btn-primary">Edit</a>
+                          <a href="{{ route('modulblog.edit', $result->id) }}" class="btn btn-primary">Edit</a>
                           <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?')">Delete</button>
                         </form>
                       </td>

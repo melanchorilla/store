@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 error_reporting(0);
 use App\Mail\mailregister;
 use App\Mail\reset;
-use App\Register;
+use App\Blog;
 use App\Time;
 use App\ProfileToko;
 use App\Aboutus;
@@ -25,12 +25,24 @@ class BlogController extends Controller
     }else{
       $menuabout = "";
     }
+
+    $datablog = Blog::all();
+
     return view('web.pages.blog', compact(
       'profiletoko',
       'aboutus',
       'time',
-      'menuabout'
+      'menuabout',
+      'datablog'
     ));
   }
+
+  public function show(Blog $blog) {
+    return view('web.pages.blogdetail', [
+      'blog' => $blog
+    ]);
+  }
+
+
 
 }

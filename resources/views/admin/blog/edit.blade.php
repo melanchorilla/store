@@ -15,7 +15,7 @@
                 <!-- /.card-header -->
                 <!-- form start -->
 
-                <form role="form" action="{{ route('blog.update', $blog->id) }}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{ route('modulblog.update', $blog->id) }}" method="post" enctype="multipart/form-data">
                   @csrf
                   @method('patch')
                   <div class="card-body">

@@ -39,10 +39,12 @@ Route::get('/resetadmin', 'AuthController@resetadmin')->name('resetadmin');
 Route::post('/cekemailadmin', 'AuthController@cekemailadmin');
 Route::post('/resetpassadmin', 'AuthController@resetpassadmin');
 Route::get('/resetsuccessadmin', 'AuthController@resetsuccessadmin')->name('resetsuccessadmin');
-Route::resource('/blogcat', 'Admin\BlogCatController');
-  Route::resource('/blog', 'Admin\BlogController');
+
 
 Route::group(['middleware'=>['auth:user']], function(){
+  Route::resource('/blogcat', 'Admin\BlogCatController');
+  Route::resource('/modulblog', 'Admin\BlogController');
+
   Route::get('/dashboard', 'Admin\DashboardController@index');
   Route::get('/profile', 'Admin\ProfileController@index');
   Route::get('/profile/kota/{id}', 'Admin\ProfileController@kota');
@@ -110,6 +112,7 @@ Route::group(['middleware'=>['auth:user']], function(){
   Route::resource('/modultestimoni', 'Admin\ModultestimoniController');
   Route::resource('/modulfasilitas', 'Admin\ModulfasilitasController');
   Route::resource('/modulpartnership', 'Admin\ModulpartnershipController');
+  Route::resource('/modulwhychooseus', 'Admin\ModulwhychooseuseController');
   Route::resource('/modulpage', 'Admin\ModulpageController');
   Route::resource('/modulfaq', 'Admin\ModulfaqController');
   Route::resource('/modulskill', 'Admin\ModulskillController');
@@ -178,7 +181,8 @@ Route::get('/partnership', 'PartnershipController@index')->name('partnership');
 Route::get('/faq', 'FaqController@index')->name('faq');
 Route::get('/products', 'ProductsController@index')->name('products');
 Route::get('/testimoni', 'TestimoniController@index')->name('testimoni');
-Route::get('/blogs', 'BlogController@index')->name('blog');
+Route::get('/blog', 'BlogController@index')->name('blog');
+Route::get('/blog/{blog:slug}', 'BlogController@show');
 
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contactadd', 'ContactController@insert');

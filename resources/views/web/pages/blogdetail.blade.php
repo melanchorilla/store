@@ -25,9 +25,9 @@
           <div class="blog-posts">
             <div class="post">
               <div class="post-content">
-                <figure class="main"> <img src="{{asset('assets/blog/'.$blog->gambar1)}}" alt="" /></figure>
+                <figure class="main text-center"> <img src="{{asset('assets/blog/'.$blog->gambar1)}}" alt="" /></figure>
                 <div class="meta"><span class="date"><?php echo date('d', strtotime($blog->updated_at)); ?></span> <?php echo date('M', strtotime($blog->updated_at)); ?> <?php echo date('Y', strtotime($blog->updated_at)); ?></span></div>
-                <h3 class="post-title"><a href="blog-post.html">{{$blog->nama}}</a></h3>
+                <h3 class="post-title">{{$blog->nama}}</h3>
                 <p>{!!$blog->konten!!}</p>
 
                 <div class="clearfix"></div>
@@ -59,7 +59,7 @@
               <?php $datablog = DB::table('blog')->whereNotIn('id', [$blog->id])->orderBy('id', 'DESC')->limit(8)->get(); ?>
               @foreach ($datablog as $result)
               <li>
-                <figure class="overlay"> <a href="{{$result->slug}}">
+                <figure class="overlay"> <a href="/blog/{{$result->slug}}">
                   <div class="overlay icon">
                     <div class="info"></div>
                   </div>

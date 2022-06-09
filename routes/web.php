@@ -45,6 +45,9 @@ Route::group(['middleware'=>['auth:user']], function(){
   Route::resource('/blogcat', 'Admin\BlogCatController');
   Route::resource('/modulblog', 'Admin\BlogController');
 
+  Route::resource('/modulagenda', 'Admin\ModulagendaController');
+
+
   Route::get('/dashboard', 'Admin\DashboardController@index');
   Route::get('/profile', 'Admin\ProfileController@index');
   Route::get('/profile/kota/{id}', 'Admin\ProfileController@kota');

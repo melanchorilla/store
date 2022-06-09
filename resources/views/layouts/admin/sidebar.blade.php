@@ -269,6 +269,14 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a href="/modulagenda" class="nav-link {{ $menu=='modulagenda' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              Agenda
+            </p>
+          </a>
+        </li>
         {{-- <li class="nav-item">
           <a href="/modultime" class="nav-link {{ $menu=='modultime' ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>

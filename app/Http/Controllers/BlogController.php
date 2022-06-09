@@ -5,6 +5,7 @@ error_reporting(0);
 use App\Mail\mailregister;
 use App\Mail\reset;
 use App\Blog;
+use App\BlogCat;
 use App\Time;
 use App\ProfileToko;
 use App\Aboutus;
@@ -17,7 +18,6 @@ class BlogController extends Controller
   public function index()
   {
     $profiletoko = ProfileToko::findorfail('1');
-    $aboutus = Aboutus::findorfail('1');
     $time = Time::all();
     $segmen = request()->segment(1);
     if($segmen=='about'){
@@ -26,15 +26,16 @@ class BlogController extends Controller
       $menuabout = "";
     }
 
-    $datablog = Blog::latest()->paginate(6);
+    // $datablog = Blog::latest()->paginate(6);
+    $datablogcat = BlogCat::all();
 
-    return view('web.pages.blog', compact(
-      'profiletoko',
-      'aboutus',
-      'time',
-      'menuabout',
-      'datablog'
-    ));
+    return view('web.pages.blog', [
+      'profiletoko' => $profiletoko,
+      'time' => $time,
+      'menuabout' => $menuabout,
+      'datablog' => Blog::latest()->filter(request(['keyword']))->paginate(6)->withQueryString(),
+      'datablogcat' => $datablogcat
+    ]);
   }
 
   public function show(Blog $blog) {

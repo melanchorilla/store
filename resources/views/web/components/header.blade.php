@@ -308,6 +308,13 @@
                               </div>
                             </li>
 
+
+                            <li class="full-width">
+                              <a href="{{route('blog')}}" class="smooth cleafix" title="">
+                                BLOG
+                              </a>
+                            </li>
+
                           </ul>
                         </div>
                       </div>

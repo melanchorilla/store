@@ -25,8 +25,17 @@ class Blog extends Model
   }
 
   public function getRouteKeyName()
-    {
-        return 'slug';
-    }
+  {
+      return 'slug';
+  }
+
+  public function scopeFilter($query, array $filters) {
+    $query->when($filters['keyword'] ?? false, function ($query, $keyword) {
+        return $query->where('nama', 'like', '%' . $keyword . '%')
+            ->orWhere('konten', 'like', '%' . $keyword . '%');
+    });
+
+
+  }
 
 }

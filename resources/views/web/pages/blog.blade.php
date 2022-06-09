@@ -48,6 +48,10 @@
     .arrowPrev { background-image: url('img/back.gif'); left: -45px; }
     .arrowNext { background-image: url('img/next.gif'); right: -40px; }
     .arrowPrev.jp-disabled, .arrowNext.jp-disabled { display: none; }
+
+    .mt-5 {
+      margin-top: 50px;
+    }
     </style>
     <!-- pagination -->
 
@@ -57,7 +61,31 @@
     <div class="container inner">
       <div class="blog grid-view col3">
         <div class="blog-posts">
-          <div class="isotope row" id="itemContainer">
+          <div class="row mt-5">
+            <div class="col-md-12">
+              <!-- form -->
+              <form action="/blog" method="get" class="form-inline">
+                {{-- <div class="form-group">
+                  <label for="">Kategori</label>
+                  <select class="form-control" name="category">
+                    <option value="">-Pilih Kategori-</option>
+                    @foreach($datablogcat as $blogcat)
+                      <option value="{{ $blogcat->slug }}">{{ $blogcat->nama }}</option>
+                    @endforeach
+                  </select>
+                </div> --}}
+
+                <div class="form-group">
+                  <label for="keyword">Keyword</label>
+                  <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Cari Blog">
+                </div>
+
+                <button type="submit" class="btn btn-default">Search</button>
+              </form>
+              <!-- endform -->
+            </div>
+          </div>
+          <div class="isotope row mt-5" id="itemContainer">
             @foreach ($datablog as $result)
             <div class="col-sm-6 col-md-4 grid-view-post">
               <div class="post">

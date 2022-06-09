@@ -315,6 +315,12 @@
                               </a>
                             </li>
 
+                            <li class="full-width">
+                              <a href="{{route('agenda')}}" class="smooth cleafix" title="">
+                                AGENDA
+                              </a>
+                            </li>
+
                           </ul>
                         </div>
                       </div>

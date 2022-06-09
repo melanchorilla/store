@@ -187,6 +187,9 @@ Route::get('/testimoni', 'TestimoniController@index')->name('testimoni');
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{blog:slug}', 'BlogController@show');
 
+Route::get('/agenda', 'AgendaController@index')->name('agenda');
+Route::get('/agenda/{id}', 'AgendaController@show');
+
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contactadd', 'ContactController@insert');
 Route::post('/subscribe', 'SubscribeController@insert');

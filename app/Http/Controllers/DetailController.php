@@ -15,6 +15,9 @@ class DetailController extends Controller
       $product = Product::where('slug', $slug)->first();
       $profiletoko = ProfileToko::findorfail('1');
       $marketplace = Marketplace::all();
+      if(!isset($product)){
+        abort(404);
+      }
       //return view('front.detail', compact('product'));
       return view('web.pages.product_detail', compact('product', 'marketplace', 'profiletoko'));
     }

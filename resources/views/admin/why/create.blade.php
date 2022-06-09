@@ -15,7 +15,7 @@
                 <!-- /.card-header -->
                 <!-- form start -->
 
-                <form role="form" action="{{ route('modulwhy.store') }}" method="post">
+                <form role="form" action="{{ route('modulwhy.store') }}" method="post" enctype="multipart/form-data">
                   @csrf
                   <div class="card-body">
 
@@ -39,6 +39,13 @@
                       <label for="exampleInputEmail1">Detail</label>
                       <div class="col-md-5">
                         <textarea name="detail" class="form-control" rows="5" placeholder="Detail"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Image</label>
+                      <div class="col-md-5">
+                        <input type="file" class="form-control" name="image" placeholder="Gambar">
                       </div>
                     </div>
 

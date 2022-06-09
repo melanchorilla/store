@@ -55,15 +55,24 @@ class ModulwhyController extends Controller
       //  $why = Why::all();
         $this->validate($request,[
           'title' => 'required',
-          'detail' => 'required'
+          'detail' => 'required',
+          'image' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048'
         ]);
+        
+        $image = $request->image;
+        $new_image = time().str_replace(' ', '-', $image->getClientOriginalName());
+
+        // dd($request->all());
 
         $why = Why::create([
           'title' => $request->title,
-          'detail' => $request->detail
+          'detail' => $request->detail,
+          'image' => $new_image
         ]);
 
-        return redirect()->route('modulwhy.index')->with('success','Why berhasil disimpan');
+        $image->move('assets/whychooseus/', $new_image);
+
+        return redirect()->route('modulwhy.index')->with('success','Data Why berhasil disimpan');
     }
 
     /**
@@ -106,14 +115,28 @@ class ModulwhyController extends Controller
 
       $this->validate($request,[
         'title' => 'required',
-        'detail' => 'required'
+        'detail' => 'required',
+        'image' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
       ]);
 
       $why = Why::findorfail($id);
 
+      $new_image = '';
+
+      if($request->has('image')){
+        $image = $request->image;
+        $new_image = time().str_replace(' ', '-', $image->getClientOriginalName());
+        $image->move('assets/whychooseus/', $new_image);
+        // hapus gambar
+        unlink(public_path('assets/whychooseus/' . $why->image));
+      }else{
+        $new_gambar = $request->gambar_lama;
+      }
+
       $why_data = [
         'title' => $request->title,
-        'detail' => $request->detail
+        'detail' => $request->detail,
+        'image' => $new_image
       ];
 
       $why->update($why_data);
@@ -130,6 +153,11 @@ class ModulwhyController extends Controller
     public function destroy($id)
     {
       $why = Why::findorfail($id);
+
+      if($why->gambar) {
+        unlink(public_path('assets/whychooseus/' . $why->gambar));
+      }
+
       $why->delete();
 
       return redirect()->back()->with('success', 'Data berhasil dihapus');

@@ -1,5 +1,5 @@
 @extends('layouts.admin.layout')
-@section('header', 'Edit FAQ')
+@section('header', 'Edit Why Choose Us Data')
 
 @section('content')
 
@@ -15,7 +15,7 @@
                 <!-- /.card-header -->
                 <!-- form start -->
 
-                <form role="form" action="{{ route('modulwhy.update', $why->id) }}" method="post">
+                <form role="form" action="{{ route('modulwhy.update', $why->id) }}" method="post" enctype="multipart/form-data">
                   @csrf
                   @method('patch')
                   <div class="card-body">
@@ -40,6 +40,21 @@
                       <label for="exampleInputEmail1">Detail</label>
                       <div class="col-md-5">
                         <textarea name="detail" class="form-control" rows="5" placeholder="Detail">{{ $why->detail }}</textarea>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Gambar</label>
+                      <div class="col-md-5">
+                        <img src="{{$why->getImage()}}" style="max-height: 100px;"/>
+                        <input type="hidden" class="form-control" name="gambar_lama" value="{{ $fasilitas->gambar }}">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Gambar</label>
+                      <div class="col-md-5">
+                        <input type="file" class="form-control" name="image" placeholder="Gambar">
                       </div>
                     </div>
 

@@ -225,7 +225,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/modulwhychooseus" class="nav-link {{ $menu=='modulwhychooseus' ? 'active' : '' }}">
+          <a href="/modulwhy" class="nav-link {{ $menu=='modulwhy' ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>
             <p>
               Why Choose Us Page

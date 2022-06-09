@@ -28,6 +28,7 @@
                       <th>No</th>
                       <th>Title</th>
                       <th>Detail</th>
+                      <th>Image</th>
                       <th>Action</th>
                     </tr>
                     </thead>
@@ -38,6 +39,13 @@
                       <td>{{ $no }}</td>
                       <td>{{ $result->title }}</td>
                       <td>{{ $result->detail }}</td>
+                      <td>
+                        @if ($result->image)
+                            <img src="{{asset('assets/whychooseus/'.$result->image)}}" style="max-height: 50px;"/>
+                        @else
+                          {{ "Tidak ada gambar" }}
+                        @endif
+                      </td>
                       <td>
                         <form action="{{ route('modulwhy.destroy', $result->id) }}" method="post">
                           @csrf
